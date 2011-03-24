@@ -1,5 +1,5 @@
 { "name" : "abbrev"
-, "version" : "1.0.2"
+, "version" : "1.0.3"
 , "description" : "Like ruby's abbrev module, but in js"
 , "author" : "Isaac Z. Schlueter <i@izs.me>"
 , "main" : "./lib/abbrev.js"
