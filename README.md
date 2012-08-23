@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/isaacs/abbrev-js.png)](http://travis-ci.org/isaacs/abbrev-js)
 # abbrev-js
 
 Just like [ruby's Abbrev](http://apidock.com/ruby/Abbrev).
