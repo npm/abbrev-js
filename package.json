@@ -5,8 +5,11 @@
   "author": "Isaac Z. Schlueter <i@izs.me>",
   "main": "abbrev.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "tap test.js --cov"
   },
   "repository": "http://github.com/isaacs/abbrev-js",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^1.2.0"
+  }
 }
