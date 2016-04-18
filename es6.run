@@ -1,5 +1,5 @@
 git add -f *
 git commit -m "ES6-Syntax Update"
-git remote remove origin
+#git remote remove origin
 git remote add origin https://github.com/ralic/abbrev-js
 git push origin master
