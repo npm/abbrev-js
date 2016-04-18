@@ -1,4 +1,4 @@
-
+'strict'
 module.exports = exports = abbrev.abbrev = abbrev
 
 abbrev.monkeyPatch = monkeyPatch
@@ -16,10 +16,12 @@ function monkeyPatch () {
 }
 
 function abbrev (list) {
+  'use strict'
   if (arguments.length !== 1 || !Array.isArray(list)) {
     list = Array.prototype.slice.call(arguments, 0)
   }
-  for (let i = 0, l = list.length, args = [] ; i < l ; i ++) {
+  let args=[];
+  for (let i = 0, l = list.length; i < l ; i ++) {
     args[i] = typeof list[i] === "string" ? list[i] : String(list[i])
   }
 
@@ -35,7 +37,8 @@ function abbrev (list) {
       , nextMatches = true
       , prevMatches = true
     if (current === next) continue
-    for (let j = 0, cl = current.length ; j < cl ; j ++) {
+      let j,cl;
+    for (j = 0, cl = current.length ; j < cl ; j ++) {
       let curChar = current.charAt(j)
       nextMatches = nextMatches && curChar === next.charAt(j)
       prevMatches = prevMatches && curChar === prev.charAt(j)

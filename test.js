@@ -1,3 +1,4 @@
+'use strict'
 let abbrev = require('./abbrev.js')
 let assert = require("assert")
 let util = require("util")
@@ -24,7 +25,8 @@ test([ "ruby", "ruby", "rules", "rules", "rules" ],
 , rul: 'rules'
 , rule: 'rules'
 , rules: 'rules'
-})
+});
+
 test(["fool", "foom", "pool", "pope"],
 { fool: 'fool'
 , foom: 'foom'
@@ -32,7 +34,8 @@ test(["fool", "foom", "pool", "pope"],
 , pool: 'pool'
 , pop: 'pope'
 , pope: 'pope'
-})
+});
+
 test(["a", "ab", "abc", "abcd", "abcde", "acde"],
 { a: 'a'
 , ab: 'ab'
@@ -42,6 +45,6 @@ test(["a", "ab", "abc", "abcd", "abcde", "acde"],
 , ac: 'acde'
 , acd: 'acde'
 , acde: 'acde'
-})
+});
 
 console.log("1..%d", count)
