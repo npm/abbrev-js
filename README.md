@@ -4,7 +4,7 @@ Just like [ruby's Abbrev](http://apidock.com/ruby/Abbrev).
 
 Usage:
 
-    var abbrev = require("abbrev");
+    let abbrev = require("abbrev");
     abbrev("foo", "fool", "folding", "flop");
     
     // returns:
