@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "tap": "^2.0.0"
-  }
+  },
+  "files": [
+    "abbrev.js"
+  ]
 }
