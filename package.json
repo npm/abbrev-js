@@ -10,7 +10,7 @@
   "repository": "http://github.com/isaacs/abbrev-js",
   "license": "ISC",
   "devDependencies": {
-    "tap": "^5.7.2"
+    "tap": "^7.0.0"
   },
   "files": [
     "abbrev.js"
