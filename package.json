@@ -5,12 +5,12 @@
   "author": "Isaac Z. Schlueter <i@izs.me>",
   "main": "abbrev.js",
   "scripts": {
-    "test": "tap test.js --cov"
+    "test": "tap test.js --100"
   },
   "repository": "http://github.com/isaacs/abbrev-js",
   "license": "ISC",
   "devDependencies": {
-    "tap": "^5.7.2"
+    "tap": "^10.1"
   },
   "files": [
     "abbrev.js"

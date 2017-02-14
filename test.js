@@ -1,21 +1,18 @@
 var abbrev = require('./abbrev.js')
-var assert = require("assert")
+var t = require('tap')
 var util = require("util")
 
-console.log("TAP version 13")
 var count = 0
 
 function test (list, expect) {
-  count++
   var actual = abbrev(list)
-  assert.deepEqual(actual, expect,
+  t.deepEqual(actual, expect,
     "abbrev("+util.inspect(list)+") === " + util.inspect(expect) + "\n"+
     "actual: "+util.inspect(actual))
   actual = abbrev.apply(exports, list)
-  assert.deepEqual(abbrev.apply(exports, list), expect,
+  t.deepEqual(abbrev.apply(exports, list), expect,
     "abbrev("+list.map(JSON.stringify).join(",")+") === " + util.inspect(expect) + "\n"+
     "actual: "+util.inspect(actual))
-  console.log('ok - ' + list.join(' '))
 }
 
 test([ "ruby", "ruby", "rules", "rules", "rules" ],
@@ -25,7 +22,7 @@ test([ "ruby", "ruby", "rules", "rules", "rules" ],
 , rule: 'rules'
 , rules: 'rules'
 })
-test(["fool", "foom", "pool", "pope"],
+test(["fool", "foom", "pool", { toString: function () { return "pope" } }],
 { fool: 'fool'
 , foom: 'foom'
 , poo: 'pool'
@@ -44,4 +41,15 @@ test(["a", "ab", "abc", "abcd", "abcde", "acde"],
 , acde: 'acde'
 })
 
-console.log("1..%d", count)
+t.notOk([].abbrev)
+t.notOk({}.abbrev)
+
+abbrev.monkeyPatch()
+
+t.isa([].abbrev, 'function')
+t.isa({}.abbrev, 'function')
+
+var list = ['pool', 'pope', 'fool', 'floop', 'flu']
+t.same(list.abbrev(), abbrev(list))
+list = list.reduce(function (s, k) { s[k]=true; return s }, {})
+t.same(list.abbrev(), abbrev(Object.keys(list)))
