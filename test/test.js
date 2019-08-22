@@ -1,4 +1,4 @@
-var abbrev = require('./abbrev.js')
+var abbrev = require('../')
 var t = require('tap')
 var util = require("util")
 
