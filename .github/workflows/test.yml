@@ -8,7 +8,7 @@ jobs:
       matrix:
         node: [8.x, 10.x, 12.x]
         os: [ubuntu-latest, windows-latest]
-        cmd: [npm cit]
+        cmd: [npm it]
         exclude: # only test windows on node 12
           - os: windows-latest
             node: 8.x
