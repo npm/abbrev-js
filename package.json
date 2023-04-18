@@ -20,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.12.1",
+    "@npmcli/template-oss": "4.13.0",
     "tap": "^16.3.0"
   },
   "tap": {
@@ -38,6 +38,6 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.12.1"
+    "version": "4.13.0"
   }
 }
