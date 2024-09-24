@@ -1,6 +1,6 @@
 {
   "name": "abbrev",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Like ruby's abbrev module, but in js",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
