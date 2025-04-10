@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1](https://github.com/npm/abbrev-js/compare/v3.0.0...v3.0.1) (2025-04-10)
+### Bug Fixes
+* [`1fcc7c9`](https://github.com/npm/abbrev-js/commit/1fcc7c9f31ac37554b162e3d532ecadf1259f35e) [#100](https://github.com/npm/abbrev-js/pull/100) abbrev works with a single string input (#100) (@owlstronaut)
+### Chores
+* [`7d26b01`](https://github.com/npm/abbrev-js/commit/7d26b01237bea985524e6d46f2d9e21b658788b1) [#99](https://github.com/npm/abbrev-js/pull/99) bump @npmcli/template-oss from 4.23.3 to 4.24.3 (#99) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.0.0](https://github.com/npm/abbrev-js/compare/v2.0.0...v3.0.0) (2024-09-24)
 ### ⚠️ BREAKING CHANGES
 * `abbrev` now supports node `^18.17.0 || >=20.5.0`
