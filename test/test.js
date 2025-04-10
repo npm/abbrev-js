@@ -14,6 +14,17 @@ function test (list, expect) {
     'actual: ' + util.inspect(actual))
 }
 
+t.test('single string input', t => {
+  const result = abbrev('asdf')
+  t.same(result, {
+    a: 'asdf',
+    as: 'asdf',
+    asd: 'asdf',
+    asdf: 'asdf',
+  }, 'correctly abbreviates a single string')
+  t.end()
+})
+
 test(['ruby', 'ruby', 'rules', 'rules', 'rules'],
   { rub: 'ruby',
     ruby: 'ruby',
