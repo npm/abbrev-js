@@ -1,54 +1,62 @@
+const t = require('node:test')
+const a = require('node:assert')
 const abbrev = require('../')
-const t = require('tap')
 const util = require('util')
 
-function test (list, expect) {
-  let actual = abbrev(list)
-  t.same(actual, expect,
-    'abbrev(' + util.inspect(list) + ') === ' + util.inspect(expect) + '\n' +
-    'actual: ' + util.inspect(actual))
+const suite = [
+  [
+    ['ruby', 'ruby', 'rules', 'rules', 'rules'],
+    { rub: 'ruby',
+      ruby: 'ruby',
+      rul: 'rules',
+      rule: 'rules',
+      rules: 'rules',
+    },
+  ], [
+    ['fool', 'foom', 'pool', { toString: () => 'pope' }],
+    { fool: 'fool',
+      foom: 'foom',
+      poo: 'pool',
+      pool: 'pool',
+      pop: 'pope',
+      pope: 'pope',
+    },
+  ], [
+    ['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'],
+    { a: 'a',
+      ab: 'ab',
+      abc: 'abc',
+      abcd: 'abcd',
+      abcde: 'abcde',
+      ac: 'acde',
+      acd: 'acde',
+      acde: 'acde',
+    },
+  ], [
+    ['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'].reverse(),
+    { a: 'a',
+      ab: 'ab',
+      abc: 'abc',
+      abcd: 'abcd',
+      abcde: 'abcde',
+      ac: 'acde',
+      acd: 'acde',
+      acde: 'acde',
+    },
+  ],
+]
 
-  actual = abbrev(...list)
-  t.same(abbrev(...list), expect,
-    'abbrev(' + list.map(JSON.stringify).join(',') + ') === ' + util.inspect(expect) + '\n' +
-    'actual: ' + util.inspect(actual))
+for (let i = 0; i < suite.length; i++) {
+  t.test(`test ${i}`, t => {
+    const [list, expect] = suite[i]
+    let actual = abbrev(list)
+    a.deepEqual(actual, expect,
+      'abbrev(' + util.inspect(list) + ') === ' + util.inspect(expect) + '\n' +
+      'actual: ' + util.inspect(actual))
+
+    actual = abbrev(...list)
+    a.deepEqual(abbrev(...list), expect,
+      'abbrev(' + list.map(JSON.stringify).join(',') + ') === ' + util.inspect(expect) + '\n' +
+      'actual: ' + util.inspect(actual))
+  })
 }
-
-test(['ruby', 'ruby', 'rules', 'rules', 'rules'],
-  { rub: 'ruby',
-    ruby: 'ruby',
-    rul: 'rules',
-    rule: 'rules',
-    rules: 'rules',
-  })
-test(['fool', 'foom', 'pool', { toString: () => 'pope' }],
-  { fool: 'fool',
-    foom: 'foom',
-    poo: 'pool',
-    pool: 'pool',
-    pop: 'pope',
-    pope: 'pope',
-  })
-test(['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'],
-  { a: 'a',
-    ab: 'ab',
-    abc: 'abc',
-    abcd: 'abcd',
-    abcde: 'abcde',
-    ac: 'acde',
-    acd: 'acde',
-    acde: 'acde',
-  })
-test(['a', 'ab', 'abc', 'abcd', 'abcde', 'acde'].reverse(),
-  { a: 'a',
-    ab: 'ab',
-    abc: 'abc',
-    abcd: 'abcd',
-    abcde: 'abcde',
-    ac: 'acde',
-    acd: 'acde',
-    acde: 'acde',
-  })
-
-t.notOk([].abbrev)
-t.notOk({}.abbrev)
