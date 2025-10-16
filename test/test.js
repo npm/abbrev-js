@@ -5,6 +5,9 @@ const util = require('util')
 
 const suite = [
   [
+    'test',
+    { t: 'test', te: 'test', tes: 'test', test: 'test' },
+  ], [
     ['ruby', 'ruby', 'rules', 'rules', 'rules'],
     { rub: 'ruby',
       ruby: 'ruby',
@@ -54,9 +57,11 @@ for (let i = 0; i < suite.length; i++) {
       'abbrev(' + util.inspect(list) + ') === ' + util.inspect(expect) + '\n' +
       'actual: ' + util.inspect(actual))
 
-    actual = abbrev(...list)
-    a.deepEqual(abbrev(...list), expect,
-      'abbrev(' + list.map(JSON.stringify).join(',') + ') === ' + util.inspect(expect) + '\n' +
-      'actual: ' + util.inspect(actual))
+    if (Array.isArray(list)) {
+      actual = abbrev(...list)
+      a.deepEqual(abbrev(...list), expect,
+        'abbrev(' + list.map(JSON.stringify).join(',') + ') === ' + util.inspect(expect) + '\n' +
+        'actual: ' + util.inspect(actual))
+    }
   })
 }
