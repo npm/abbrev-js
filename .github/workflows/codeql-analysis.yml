@@ -13,6 +13,9 @@ on:
     # "At 10:00 UTC (03:00 PT) on Monday" https://crontab.guru/#0_10_*_*_1
     - cron: "0 10 * * 1"
 
+permissions:
+  contents: read
+
 jobs:
   analyze:
     name: Analyze
@@ -29,8 +32,8 @@ jobs:
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: javascript
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3

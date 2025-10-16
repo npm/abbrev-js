@@ -49,12 +49,12 @@ jobs:
         id: flags
         run: |
           dependabot_dir="${{ steps.metadata.outputs.directory }}"
-          if [[ "$dependabot_dir" == "/" ]]; then
+          if [[ "$dependabot_dir" == "/" || "$dependabot_dir" == "/main" ]]; then
             echo "workspace=-iwr" >> $GITHUB_OUTPUT
           else
             # strip leading slash from directory so it works as a
             # a path to the workspace flag
-            echo "workspace=-w ${dependabot_dir#/}" >> $GITHUB_OUTPUT
+            echo "workspace=--workspace ${dependabot_dir#/}" >> $GITHUB_OUTPUT
           fi
 
       - name: Apply Changes
