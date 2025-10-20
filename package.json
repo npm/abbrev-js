@@ -5,14 +5,15 @@
   "author": "GitHub Inc.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "tap",
+    "test": "node --test --test-timeout=3000",
     "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run eslint -- --fix",
-    "snap": "tap",
+    "snap": "node --test --test-update-snapshots",
     "posttest": "npm run lint",
-    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+    "test:cover": "node --test --experimental-test-coverage --test-timeout=3000 --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,6 @@
     "@npmcli/template-oss": "4.26.1",
     "tap": "^16.3.0"
   },
-  "tap": {
-    "nyc-arg": [
-      "--exclude",
-      "tap-snapshots/**"
-    ]
-  },
   "files": [
     "bin/",
     "lib/"
@@ -39,7 +34,9 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.26.1",
-    "publish": true
+    "version": "4.26.0",
+    "publish": true,
+    "testRunner": "node:test",
+    "latestCiVersion": 24
   }
 }
