@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.0.0](https://github.com/npm/abbrev-js/compare/v3.0.1...v4.0.0) (2025-10-20)
+### ⚠️ BREAKING CHANGES
+* `abbrev` now supports node `^20.17.0 || >=22.9.0`
+### Features
+* [`4e4e0d0`](https://github.com/npm/abbrev-js/commit/4e4e0d0b4786c573541f77b66ae93a5ce985134d) [#110](https://github.com/npm/abbrev-js/pull/110) swap from tap to built-in node:test (@owlstronaut)
+### Bug Fixes
+* [`9a08f35`](https://github.com/npm/abbrev-js/commit/9a08f359c1b12d17d4631bda5211e24002a8f5be) [#110](https://github.com/npm/abbrev-js/pull/110) align to npm 11 node engine range (@owlstronaut)
+### Chores
+* [`3300bf3`](https://github.com/npm/abbrev-js/commit/3300bf31269b69d9e7af266f5f3252635b654446) [#110](https://github.com/npm/abbrev-js/pull/110) fix test coverage (@owlstronaut)
+* [`a6230a7`](https://github.com/npm/abbrev-js/commit/a6230a706cbc25abf97b3987b2c7c483da4e3dee) [#110](https://github.com/npm/abbrev-js/pull/110) remove tap (@owlstronaut)
+* [`fc814b7`](https://github.com/npm/abbrev-js/commit/fc814b7ba82c3d4e62d500491dd99956d6a759e9) [#102](https://github.com/npm/abbrev-js/pull/102) postinstall workflow updates (#102) (@owlstronaut)
+* [`52f6fdd`](https://github.com/npm/abbrev-js/commit/52f6fddd479ffa97ec4b281859e8b7ec35b1fc08) [#109](https://github.com/npm/abbrev-js/pull/109) bump @npmcli/template-oss from 4.26.0 to 4.26.1 (#109) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.0.1](https://github.com/npm/abbrev-js/compare/v3.0.0...v3.0.1) (2025-04-10)
 ### Bug Fixes
 * [`1fcc7c9`](https://github.com/npm/abbrev-js/commit/1fcc7c9f31ac37554b162e3d532ecadf1259f35e) [#100](https://github.com/npm/abbrev-js/pull/100) abbrev works with a single string input (#100) (@owlstronaut)
