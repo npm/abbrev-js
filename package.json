@@ -5,15 +5,16 @@
   "author": "GitHub Inc.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node --test test",
+    "test": "node --test './test/**/*.js'",
     "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run eslint -- --fix",
-    "snap": "node --test --test-update-snapshots test",
+    "snap": "node --test --test-update-snapshots './test/**/*.js'",
     "posttest": "npm run lint",
     "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
-    "test:cover": "node --test --experimental-test-coverage --test-timeout=3000 --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 test"
+    "test:cover": "node --test --experimental-test-coverage --test-timeout=3000 --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 './test/**/*.js'",
+    "test:node20": "node --test test"
   },
   "repository": {
     "type": "git",
