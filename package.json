@@ -5,7 +5,7 @@
   "author": "GitHub Inc.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test ./test/**/*.js",
     "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
