@@ -5,7 +5,7 @@
   "author": "GitHub Inc.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node -e \"process.exit(parseInt(process.version.match(/^v(\\d+)/)[1]) < 21 ? 0 : 1)\" && node --test test || node --test './test/**/*.js'",
+    "test": "node --test './test/**/*.js'",
     "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
