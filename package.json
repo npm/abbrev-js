@@ -13,7 +13,8 @@
     "snap": "node --test --test-update-snapshots './test/**/*.js'",
     "posttest": "npm run lint",
     "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
-    "test:cover": "node --test --experimental-test-coverage --test-timeout=3000 --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 './test/**/*.js'"
+    "test:cover": "node --test --experimental-test-coverage --test-timeout=3000 --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 './test/**/*.js'",
+    "test:node20": "node --test test"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "@npmcli/eslint-config": "^6.0.0",
-    "@npmcli/template-oss": "4.27.1"
+    "@npmcli/template-oss": "4.28.0"
   },
   "files": [
     "bin/",
@@ -33,7 +34,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.27.1",
+    "version": "4.28.0",
     "publish": true,
     "testRunner": "node:test",
     "latestCiVersion": 24
