@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/abbrev-js/compare/v4.0.0...v5.0.0) (2026-05-08)
+### ⚠️ BREAKING CHANGES
+* `abbrev` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* template-oss-apply
+### Features
+* [`57364ba`](https://github.com/npm/abbrev-js/commit/57364ba89525f820d39aa9527a8fa82d298d3778) [#122](https://github.com/npm/abbrev-js/pull/122) bump to new node engine range (@owlstronaut)
+* [`1e21469`](https://github.com/npm/abbrev-js/commit/1e21469e7bbf43a586a60b65196083b4be32bd3c) [#122](https://github.com/npm/abbrev-js/pull/122) template-oss-apply (@owlstronaut)
+### Chores
+* [`bc3ca4f`](https://github.com/npm/abbrev-js/commit/bc3ca4ffa7d4b31c6b1b84586741917045217801) [#122](https://github.com/npm/abbrev-js/pull/122) template-oss-apply (@owlstronaut)
+* [`f6533a8`](https://github.com/npm/abbrev-js/commit/f6533a8f3594ee244be2e860abac399e6876e3b7) [#114](https://github.com/npm/abbrev-js/pull/114) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#114) (@dependabot[bot])
+* [`dafd6dc`](https://github.com/npm/abbrev-js/commit/dafd6dcad68c5acf26417b19ba19eef0af9b9852) [#120](https://github.com/npm/abbrev-js/pull/120) bump @npmcli/template-oss from 4.29.0 to 4.30.0 (#120) (@dependabot[bot], @npm-cli-bot)
+
 ## [4.0.0](https://github.com/npm/abbrev-js/compare/v3.0.1...v4.0.0) (2025-10-20)
 ### ⚠️ BREAKING CHANGES
 * `abbrev` now supports node `^20.17.0 || >=22.9.0`
